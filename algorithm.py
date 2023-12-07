@@ -22,7 +22,6 @@ def overlay_mask_on_image(image, mask, alpha=0.5):
                 overlay[i,j,0] = 0
                 overlay[i,j,1] = 255
                 overlay[i,j,2] = 0
-
     # apply alpha
     cv2.addWeighted(overlay, alpha, output, 1 - alpha, 0, output)
 
@@ -61,7 +60,7 @@ def run_prediction(model_path, input_images_path, output_path, num_images=None, 
     images_paths = [os.path.join(input_images_path, image_filename) for image_filename in os.listdir(input_images_path)]
     num_images = num_images if num_images is not None and num_images < len(images_paths) else len(images_paths)
     images_paths = images_paths[:num_images]
-    print("Number of input images:" + num_images)
+    print("Number of input images:" + str(num_images))
     print("Input images paths: " + images_paths)
 
     resize = (model.input_shape[1], model.input_shape[2])
