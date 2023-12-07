@@ -61,7 +61,7 @@ def run_prediction(model_path, input_images_path, output_path, num_images=None, 
     num_images = num_images if num_images is not None and num_images < len(images_paths) else len(images_paths)
     images_paths = images_paths[:num_images]
     print("Number of input images:" + str(num_images))
-    print("Input images paths: " + images_paths)
+    # print ("Input images paths: " + ', '.join(images_paths))
 
     resize = (model.input_shape[1], model.input_shape[2])
 
